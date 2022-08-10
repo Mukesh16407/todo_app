@@ -9,6 +9,31 @@
       "status": false,
       "title": "javascript3",
       "id": 10
+    },
+    {
+      "status": false,
+      "title": "add",
+      "id": 11
+    },
+    {
+      "status": false,
+      "title": "remove",
+      "id": 12
+    },
+    {
+      "status": false,
+      "title": "edit",
+      "id": 13
+    },
+    {
+      "status": false,
+      "title": "sum",
+      "id": 14
+    },
+    {
+      "status": false,
+      "title": "diff",
+      "id": 15
     }
   ]
 }

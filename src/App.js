@@ -24,7 +24,10 @@ function App() {
         setTodos(res);
         //setloading(false);
         setText("")
-      })
+      }).catch((err) => {
+        // some error handling
+        console.log(err)
+      });
   }
  const handleEdit =(id)=>{
   
