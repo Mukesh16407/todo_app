@@ -70,3 +70,14 @@ button:hover{
   margin-top: 40px;
   
 }
+.check-box{
+padding:7px
+}
+.todo-check-box{
+  align-self: center;
+  margin: 0px 5px;
+}
+.completed{
+  text-decoration: line-through;
+  color: #808080;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoList = ({todos,setTodos,page,setPage,getData,handleEdit}) => {
+const TodoList = ({todos,text,setTodos,page,setPage,getData,handleEdit}) => {
  
   const handleDelete=(id)=>{
     // only handle Frontend;
@@ -14,11 +14,32 @@ const TodoList = ({todos,setTodos,page,setPage,getData,handleEdit}) => {
     }).then((result)=> result.json())
     .then(getData)
   }
+  const completeTodo =(event, data)=>{
+    
+    const updateTodos= [...todos].map((todo)=>{
+      if(todo.id === data.id ){
+       
+        return {...todo, status: event.target.checked}
+      }
+      return {...todo}
+    })
+    setTodos(updateTodos)
+      
+    
+  }
   return (
     <ul className="allTodos">
       {todos.map((e)=>(
-         <li className="singleTodo">
-         <span className="todoText" key={e.id} >{e.title} -{e.status
+  
+        <li className="singleTodo" key={e.id}>
+          <span className="check-box">
+          <input 
+          className="todo-check-box" 
+          checked={e.status}
+          onChange={(event)=>completeTodo(event, e)}
+          type="checkbox"/>
+          </span> 
+         <span className={`todoText `} key={e.id} >{e.title} -{e.status
          ?"Done":"Not Done"}</span>
          
           <button onClick={()=>{
